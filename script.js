@@ -13,12 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
         if (todoText === '') return;
 
         const li = document.createElement('li');
+        li.classList.add('todo-item');
         const span = document.createElement('span');
         span.textContent = todoText;
         li.appendChild(span);
 
         const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
+        deleteButton.innerHTML = '❌';
+        deleteButton.classList.add('delete-btn');
         deleteButton.addEventListener('click', function () {
             todoList.removeChild(li);
         });
